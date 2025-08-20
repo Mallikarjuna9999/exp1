@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wedding Invitation - Abdul</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+      text-align: center;
+      color: #333;
+      padding: 30px;
+    }
+
+    .invitation-box {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 48px;
+      color: #d63384;
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-size: 24px;
+      color: #6c757d;
+      margin: 10px 0 30px;
+    }
+
+    .input-group {
+      margin: 15px 0;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #6c757d;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 80%;
+      max-width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 25px;
+      background-color: #d63384;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #c2185b;
+    }
+
+    .message {
+      margin-top: 30px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #28a745;
+    }
+
+    .events {
+      margin-top: 40px;
+      text-align: left;
+    }
+
+    .events h3 {
+      color: #343a40;
+    }
+
+    .events ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .events li {
+      margin: 8px 0;
+      font-size: 16px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .events li::before {
+      content: "💖";
+      position: absolute;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="invitation-box">
+    <h1>Everyone, Let’s Come and Make It a Big Success!</h1>
+    <h2>You're Invited to the Wedding of < id=groom> </h2>
+
+    <div class="input-group">
+      <label for="bride">Bride Name</label>
+      <input type="text" id="bride" placeholder="Enter Bride Name">
+    </div>
+
+    <div class="input-group">
+      <label for="groom">Groom Name</label>
+      <input type="text" id="groom" placeholder="Enter Groom Name">
+    </div>
+
+    <button onclick="showMessage()">Celebrate Love</button>
+
+    <div class="message" id="marriageMessage"></div>
+
+    <div class="events">
+      <h3>Wedding Events</h3>
+      <ul>
+        <li>Engagement Ceremony - July 20, 2025</li>
+        <li>Mehndi Night - July 22, 2025</li>
+        <li>Wedding Day - July 25, 2025</li>
+        <li>Reception Party - July 26, 2025</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function showMessage() {
+      const bride = document.getElementById("bride").value.trim();
+      const groom = document.getElementById("groom").value.trim();
+      const messageDiv = document.getElementById("marriageMessage");
+
+      if (!bride || !groom) {
+        alert("Please enter both the bride and groom names.");
+        return;
+      }
+
+      messageDiv.textContent = `💐 Happy Married Life, ${groom} & ${bride}! 💐`;
+    }
+  </script>
+
+</body>
+</html>
